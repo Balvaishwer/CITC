@@ -1,13 +1,13 @@
 def twoSum(nums, target):
-    print(nums, target)
-    for i in range(0, len(nums) - 1):
-        for j in range(i+1, len(nums)):
-            print("res", nums[i], nums[j], nums[i] + nums[j])
-            if nums[i] + nums[j] == target:
-                return i, j
+    dict = {}
+    for i in range(len(nums)):
+        if target - nums[i] not in dict:
+            dict[nums[i]] = i
+        else:
+            return [dict[target - nums[i]], i]
 def main():
-    nums = [3,2,3]
-    print(twoSum(nums, 6))
+    nums = [2, 5, 11, 15]
+    print(twoSum(nums, 13))
 
 
 main()
